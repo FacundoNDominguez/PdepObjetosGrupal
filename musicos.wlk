@@ -24,8 +24,21 @@ object joaquin {
 	method grupoAlQuePertenece(){
 		return grupoAlQuePertenece
 		}
+		
+	method grupoAlQuePertenece(unGrupo){
+		grupoAlQuePertenece = unGrupo
+		}
+	
+	method tocaEnGrupo(){
+		return grupoAlQuePertenece.size() > 0
+	}
 	
 	method habilidad(){
+		if(self.tocaEnGrupo()){
+			return habilidad += 5
+		}
+		else
+		
 		return habilidad
 	}
 }
@@ -54,7 +67,16 @@ object lucia {
 		return grupoAlQuePertenece
 		}
 	
+	method tocaEnGrupo(){
+		return grupoAlQuePertenece.size() > 0
+	}
+	
 	method habilidad(){
+		if(self.tocaEnGrupo()){
+			return habilidad -= 20
+		}
+		else
+		
 		return habilidad
 	}
 	

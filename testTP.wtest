@@ -1,0 +1,25 @@
+import musicos.*
+import Cancion.*
+import presentacion.*
+
+describe "group of tests" {
+
+	test "Joaquin canta en grupo y su habilidad es 25" {
+
+		assert.equals(25,joaquin.habilidad())
+
+	}
+	
+	test "Joaquin canta solo y su habilidad es 20" {
+		joaquin.grupoAlQuePertenece("")
+		assert.equals(20,joaquin.habilidad())
+		
+		}
+	
+	test "Lucia canta en grupo y su habilidad es 50" {
+
+		assert.that(lucia.habilidad() == 50)
+
+	}
+		
+}
