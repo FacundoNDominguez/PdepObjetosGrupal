@@ -1,5 +1,6 @@
 import Cancion.*
 import presentacion.*
+import guitarras.*
 
 object joaquin {
 	var grupoAlQuePertenece = "Pimpinela"
@@ -88,8 +89,8 @@ object lucia {
 
 object luisAlberto {
 	var grupoAlQuePertenece = null
-	var habilidad = 0
-	var valorGuitarra = 0 
+	var habilidad
+	var guitarra
 	
 	method interpretaBienLaCancion(unaCancion){
 		return true
@@ -104,27 +105,32 @@ object luisAlberto {
 	}
 	
 	method laPresentacionEsAntesDeSeptiembre(unaPresentacion){
-		return unaPresentacion.fecha() <= 1/09/2017 
+		return unaPresentacion.fecha() <= (new Date(1,09,2017)) 
 	}
 	
 	method grupoAlQuePertenece(){
 		return grupoAlQuePertenece
 		}
 		
-		method grupoAlQuePertenece(unGrupo){
+	method grupoAlQuePertenece(unGrupo){
 		grupoAlQuePertenece = unGrupo
 	}
 	
 	
 	method habilidad(){
-		return habilidad //CALCULAR LA HABILIDAD
+		habilidad = 100.min(8 * guitarra.valor())
+		return habilidad
 	}
 	
-	method valorGuitarra(){
-		return valorGuitarra
+	method guitarra(unaGuitarra){
+		guitarra = unaGuitarra
 	}
 	
-	method valorGuitarra(unValor){
-		valorGuitarra = unValor
+	method guitarra(){
+		return guitarra
 	}
+	
+	
+	
+	
 }

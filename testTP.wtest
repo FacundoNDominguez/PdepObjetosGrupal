@@ -1,8 +1,7 @@
 import musicos.*
 import Cancion.*
 import presentacion.*
-
-describe "group of tests" {
+import guitarras.*
 
 	test "Joaquin canta en grupo y su habilidad es 25" {
 
@@ -28,6 +27,25 @@ describe "group of tests" {
 		
 		assert.equals(70,lucia.habilidad())
 		
-		}
-			
-}
+	}
+	
+	test "Luis Alberto toca con la Fender. Queremos saber su habilidad."{
+		luisAlberto.guitarra(fender)
+		assert.equals(luisAlberto.habilidad(), 80)
+	}
+		
+	test "Luis Alberto toca ahora con la Gibson sana. Queremos saber su habilidad."{
+		luisAlberto.guitarra(gibson)
+		assert.equals(luisAlberto.habilidad(), 100)
+	}	
+		
+	test "Alguien trata mal a la Gibson y ahora no está sana. Luis Alberto toca con la Gibson. Queremos saber su habilidad."{
+		luisAlberto.guitarra(gibson)
+		luisAlberto.guitarra().maltratar()
+		assert.equals(luisAlberto.habilidad(), 40)
+	}
+		
+	test "Queremos saber si Joaquín interpreta bien la canción “La Familia”"{
+		assert.equals(joaquin.interpretaBienLaCancion(laFamilia))
+		
+	}

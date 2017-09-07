@@ -1,7 +1,7 @@
 import musicos.*
 
 object lunaPark {
-	var fecha = 20/4/2017
+	var fecha = new Date(20,4,2017)
 	var musicos = #{luisAlberto,joaquin,lucia}
 	
 	method fecha(){
@@ -26,7 +26,7 @@ object lunaPark {
 }
 
 object trastienda {
-	var fecha = 15/11/2017
+	var fecha = new Date(15,11,2017)
 	var musicos = #{luisAlberto,joaquin,lucia} 
 	var diaDelEvento = "Miercoles"
 	
