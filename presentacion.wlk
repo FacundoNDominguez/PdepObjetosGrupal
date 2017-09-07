@@ -2,7 +2,7 @@ import musicos.*
 
 object lunaPark {
 	var fecha = 20/4/2017
-	var musicos = #{}
+	var musicos = #{luisAlberto,joaquin,lucia}
 	
 	method fecha(){
 		return fecha
@@ -27,7 +27,7 @@ object lunaPark {
 
 object trastienda {
 	var fecha = 15/11/2017
-	var musicos = #{} 
+	var musicos = #{luisAlberto,joaquin,lucia} 
 	var diaDelEvento = "Miercoles"
 	
 	method fecha(){
