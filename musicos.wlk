@@ -89,8 +89,6 @@ object lucia {
 
 object luisAlberto {
 	var grupoAlQuePertenece = null
-	var habilidad
-	var guitarra
 	
 	method interpretaBienLaCancion(unaCancion){
 		return true
@@ -98,39 +96,25 @@ object luisAlberto {
 	
 	method cuantoCobra(unaPresentacion){
 		if(self.laPresentacionEsAntesDeSeptiembre(unaPresentacion)){
-			return 1000 //calcular bien el cachet
+			return 1000
 		}
-		else
-		return 1200 // calcular bien el cachet
+		return 1200
 	}
 	
 	method laPresentacionEsAntesDeSeptiembre(unaPresentacion){
-		return unaPresentacion.fecha() <= (new Date(1,09,2017)) 
+		return unaPresentacion.fecha() <= new Date(1,09,2017)
 	}
 	
 	method grupoAlQuePertenece(){
 		return grupoAlQuePertenece
 		}
 		
-	method grupoAlQuePertenece(unGrupo){
+		method grupoAlQuePertenece(unGrupo){
 		grupoAlQuePertenece = unGrupo
 	}
 	
-	
-	method habilidad(){
-		habilidad = 100.min(8 * guitarra.valor())
-		return habilidad
+	method habilidad(unaGuitarra){
+		return 8 * (unaGuitarra.valorGuitarra()) //falta acotarlo a 100 en caso que la habilidad se pase
 	}
-	
-	method guitarra(unaGuitarra){
-		guitarra = unaGuitarra
-	}
-	
-	method guitarra(){
-		return guitarra
-	}
-	
-	
-	
 	
 }
