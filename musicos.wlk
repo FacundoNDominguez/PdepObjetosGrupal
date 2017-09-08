@@ -114,7 +114,7 @@ object luisAlberto {
 	}
 	
 	method habilidad(unaGuitarra){
-		return 8 * (unaGuitarra.valorGuitarra()) //falta acotarlo a 100 en caso que la habilidad se pase
+		return 100.min(8 * (unaGuitarra.valorGuitarra()))
 	}
 	
 }
