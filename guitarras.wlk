@@ -31,8 +31,7 @@ object gibson {
 	}
 	
 	method laGuitarraEstaSana(){
-		return estado == "sana"
+		return estado.equals(true)
 	}
-	
 	
 }
