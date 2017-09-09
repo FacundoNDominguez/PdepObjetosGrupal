@@ -37,13 +37,18 @@ import guitarras.*
 		assert.equals(luisAlberto.habilidad(gibson), 100)
 	}	
 		
-	test "Alguien trata mal a la Gibson y ahora no está sana. Luis Alberto toca con la Gibson. Queremos saber su habilidad."{
-		luisAlberto.guitarra(gibson)
-		luisAlberto.guitarra().maltratar()
-		assert.equals(luisAlberto.habilidad(), 40)
+	test "Alguien trata mal a la Gibson y ahora no esta sana. Luis Alberto toca con la Gibson. Queremos saber su habilidad."{
+		gibson.estado(false)
+		assert.equals(luisAlberto.habilidad(gibson), 40)
 	}
-		
-	test "Queremos saber si Joaquín interpreta bien la canción “La Familia”"{
+	
+	test "Queremos saber si Joaquin interpreta bien la cancion La familia"{
+		var laFamilia = new Cancion("La familia", 264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		assert.equals(joaquin.interpretaBienLaCancion(laFamilia))
 		
+	}
+	
+	test "Queremos saber si Joaquín interpreta bien la canción “Cisne”"{
+		var cisne = new Cancion("Cisne", 312, "Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+		assert.equals(joaquin.interpretaBienLaCancion(cisne))
 	}
