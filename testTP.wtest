@@ -30,13 +30,11 @@ import guitarras.*
 	}
 	
 	test "Luis Alberto toca con la Fender. Queremos saber su habilidad."{
-		luisAlberto.guitarra(fender)
-		assert.equals(luisAlberto.habilidad(), 80)
+		assert.equals(luisAlberto.habilidad(fender), 80)
 	}
 		
 	test "Luis Alberto toca ahora con la Gibson sana. Queremos saber su habilidad."{
-		luisAlberto.guitarra(gibson)
-		assert.equals(luisAlberto.habilidad(), 100)
+		assert.equals(luisAlberto.habilidad(gibson), 100)
 	}	
 		
 	test "Alguien trata mal a la Gibson y ahora no está sana. Luis Alberto toca con la Gibson. Queremos saber su habilidad."{
