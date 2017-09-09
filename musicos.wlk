@@ -19,7 +19,7 @@ object joaquin {
 	}
 	
 	method tocaSolo(unaPresentacion){
-		return (unaPresentacion.musicos()).size() == 1
+		return ((unaPresentacion.musicos()).size() == 1)
 	}
 	
 	method grupoAlQuePertenece(){
