@@ -30,16 +30,16 @@ import guitarras.*
 	}
 	
 	test "Luis Alberto toca con la Fender. Queremos saber su habilidad."{
-		assert.equals(luisAlberto.habilidad(fender), 80)
+		assert.equals(80,luisAlberto.habilidad(fender))
 	}
 		
 	test "Luis Alberto toca ahora con la Gibson sana. Queremos saber su habilidad."{
-		assert.equals(luisAlberto.habilidad(gibson), 100)
+		assert.equals( 100,luisAlberto.habilidad(gibson))
 	}	
 		
 	test "Alguien trata mal a la Gibson y ahora no esta sana. Luis Alberto toca con la Gibson. Queremos saber su habilidad."{
 		gibson.estado(false)
-		assert.equals(luisAlberto.habilidad(gibson), 40)
+		assert.equals(40,luisAlberto.habilidad(gibson))
 	}
 	
 	test "Queremos saber si Joaquin interpreta bien la cancion La familia"{
@@ -55,21 +55,21 @@ import guitarras.*
 
 	test "Queremos saber si Lucia interpreta bien la canción la Familia"{
 		var laFamilia = new Cancion("La familia", 264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
-		assert.equals(lucia.interpretaBienLaCancion(laFamilia),true)
+		assert.equals(lucia.interpretaBienLaCancion(laFamilia))
 	}
 	
 	test "Queremos saber si Lucia interpreta bien la canción “Cisne”"{
 		var cisne = new Cancion("Cisne", 312, "Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
-		assert.equals(lucia.interpretaBienLaCancion(cisne),false)
+		assert.equals(lucia.interpretaBienLaCancion(cisne))
 	}
 	
 	
 	test "Queremos saber si luisAlberto interpreta bien la canción la Familia"{
 		var laFamilia = new Cancion("La familia", 264, "Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
-		assert.equals(luisAlberto.interpretaBienLaCancion(laFamilia),true)
+		assert.equals(luisAlberto.interpretaBienLaCancion(laFamilia))
 	}
 	
 	test "Queremos saber si luisAlberto interpreta bien la canción “Cisne”"{
 		var cisne = new Cancion("Cisne", 312, "Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
-		assert.equals(luisAlberto.interpretaBienLaCancion(cisne),true)
+		assert.equals(luisAlberto.interpretaBienLaCancion(cisne))
 	}
