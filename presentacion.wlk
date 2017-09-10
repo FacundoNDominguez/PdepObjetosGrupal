@@ -8,6 +8,10 @@ object lunaPark {
 		return fecha
 	}
 	
+	method modificarFecha(diaNumero,mes,anio,dia){
+		fecha = new Date(diaNumero,mes,anio)
+	}
+	
 	method musicos(){
 		return musicos
 	}
@@ -23,34 +27,40 @@ object lunaPark {
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
+	
+	method quitarMusico(unMusico){
+		musicos.remove(unMusico)
+	}
 }
 
 object trastienda {
 	var fecha = new Date(15,11,2017)
 	var musicos = #{luisAlberto,joaquin,lucia} 
+	var diaDelEvento = "Miercoles"
 	
 	method fecha(){
 		return fecha
 	}
 	
-	method fecha(unaFecha){
-		fecha = unaFecha
+	method modificarFecha(diaNumero,mes,anio,dia){
+		fecha = new Date(diaNumero,mes,anio)
+		diaDelEvento = dia
 	}
 	
 	method musicos(){
 		return musicos
 	}
 	
+	method diaDelEvento(){
+		return diaDelEvento
+	}
+	
 	method agregarUnMusico(unMusico){
 		musicos.add(unMusico)
 	}
 	
-	method quitarUnMusico(unMusico){
-		musicos.remove(unMusico)
-	}
-	
 	method capacidad(){
-		if((self.fecha()).dayOfWeek() == 5){
+		if(diaDelEvento == "Sabado"){
 			return  700
 		}
 		else
@@ -60,5 +70,9 @@ object trastienda {
 	
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
+	}
+	
+	method quitarMusico(unMusico){
+		musicos.remove(unMusico)
 	}
 }
