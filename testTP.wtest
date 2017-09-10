@@ -52,3 +52,20 @@ import guitarras.*
 		var cisne = new Cancion("Cisne", 312, "Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
 		assert.equals(joaquin.interpretaBienLaCancion(cisne))
 	}
+
+	test "Queremos saber si Lucia interpreta bien la canción la Familia"{
+		assert.equals(lucia.interpretaBienLaCancion(laFamilia),true)
+	}
+	
+	test "Queremos saber si Lucia interpreta bien la canción “Cisne”"{
+		assert.equals(lucia.interpretaBienLaCancion(cisne),false)
+	}
+	
+	
+	test "Queremos saber si luisAlberto interpreta bien la canción la Familia"{
+		assert.equals(luisAlberto.interpretaBienLaCancion(laFamilia),true)
+	}
+	
+	test "Queremos saber si luisAlberto interpreta bien la canción “Cisne”"{
+		assert.equals(luisAlberto.interpretaBienLaCancion(cisne),true)
+	}
