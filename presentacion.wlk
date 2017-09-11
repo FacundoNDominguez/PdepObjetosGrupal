@@ -2,14 +2,10 @@ import musicos.*
 
 object lunaPark {
 	var fecha = new Date(20,4,2017)
-	var musicos = #{luisAlberto,joaquin,lucia}
+	var musicos = [luisAlberto,joaquin,lucia]
 	
 	method fecha(){
 		return fecha
-	}
-	
-	method modificarFecha(diaNumero,mes,anio,dia){
-		fecha = new Date(diaNumero,mes,anio)
 	}
 	
 	method musicos(){
@@ -18,6 +14,10 @@ object lunaPark {
 	
 	method agregarUnMusico(unMusico){
 		musicos.add(unMusico)
+	}
+	
+	method quitarUnMusico(unMusico){
+		musicos.remove(unMusico)
 	}
 	
 	method capacidad(){
@@ -27,40 +27,34 @@ object lunaPark {
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
-	
-	method quitarMusico(unMusico){
-		musicos.remove(unMusico)
-	}
 }
 
 object trastienda {
 	var fecha = new Date(15,11,2017)
-	var musicos = #{luisAlberto,joaquin,lucia} 
-	var diaDelEvento = "Miercoles"
+	var musicos = [luisAlberto,joaquin,lucia] 
 	
 	method fecha(){
 		return fecha
 	}
 	
-	method modificarFecha(diaNumero,mes,anio,dia){
-		fecha = new Date(diaNumero,mes,anio)
-		diaDelEvento = dia
+	method fecha(unaFecha){
+		fecha = unaFecha
 	}
 	
 	method musicos(){
 		return musicos
 	}
 	
-	method diaDelEvento(){
-		return diaDelEvento
-	}
-	
 	method agregarUnMusico(unMusico){
 		musicos.add(unMusico)
 	}
 	
+	method quitarUnMusico(unMusico){
+		musicos.remove(unMusico)
+	}
+	
 	method capacidad(){
-		if(diaDelEvento == "Sabado"){
+		if(self.esSabado()){
 			return  700
 		}
 		else
@@ -68,11 +62,11 @@ object trastienda {
 			return 400
 	}
 	
-	method costo(){
-		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
+	method esSabado(){
+		return (self.fecha()).dayOfWeek() == 6
 	}
 	
-	method quitarMusico(unMusico){
-		musicos.remove(unMusico)
+	method costo(){
+		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
 }

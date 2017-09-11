@@ -19,7 +19,11 @@ object joaquin {
 	}
 	
 	method tocaSolo(unaPresentacion){
-		return ((unaPresentacion.musicos()).size() == 1)
+		return ((unaPresentacion.musicos()).size() == 1) && self.esElMismo(unaPresentacion)
+	}
+	
+	method esElMismo(unaPresentacion){
+		return (unaPresentacion.musicos()).first() == self
 	}
 	
 	method grupoAlQuePertenece(){
