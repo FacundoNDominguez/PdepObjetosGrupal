@@ -1,0 +1,165 @@
+import musicos.*
+import Cancion.*
+import presentacion.*
+import guitarras.*
+
+describe "group of tests" {
+
+	test "Joaquin canta en grupo y su habilidad es 25" {
+
+		assert.equals(25,joaquin.habilidad())
+
+	}
+	
+	test "Joaquin canta solo y su habilidad es 20" {
+		joaquin.grupoAlQuePertenece(null)
+		assert.equals(20,joaquin.habilidad())
+		
+		}
+	
+	test "Lucia canta en grupo y su habilidad es 50" {
+
+		assert.equals(50,lucia.habilidad())
+
+	}
+	
+	test "Lucia canta en el grupo Pimpinela y lanza su carrera solista, su habilidad es 70" {
+		lucia.grupoAlQuePertenece("Pimpinela")
+		lucia.grupoAlQuePertenece(null)
+		
+		assert.equals(70,lucia.habilidad())
+		
+		}
+		
+	test "Luis Alberto toca con su guitarra Fender y queremos saber su habilidad" {
+
+		assert.equals(80,luisAlberto.habilidad(fender))
+
+	}
+	
+	test "Luis Alberto toca con su guitarra Gibson sana y queremos saber su habilidad" {
+
+		gibson.estado(true)
+		assert.equals(100,luisAlberto.habilidad(gibson))
+
+	}
+	
+	test "Luis Alberto toca con su guitarra Gibson rota y queremos saber su habilidad" {
+
+		gibson.estado(false)
+		assert.equals(40,luisAlberto.habilidad(gibson))
+
+	}
+	
+	test "Queremos saber si Joaquin interpreta bien la cancion La Familia" {
+
+		var laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+		assert.notThat(joaquin.interpretaBienLaCancion(laFamilia))
+
+	}
+	
+	test "Queremos saber si Joaquin interpreta bien la cancion Cisne" {
+
+		var cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
+ 		y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+		assert.that(joaquin.interpretaBienLaCancion(cisne))
+
+	}
+	
+	test "Queremos saber si Lucia interpreta bien la cancion La Familia" {
+
+		var laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+		assert.that(lucia.interpretaBienLaCancion(laFamilia))
+
+	}
+	
+	test "Queremos saber si Lucia interpreta bien la cancion Cisne" {
+
+		var cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
+ 		y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+		assert.notThat(lucia.interpretaBienLaCancion(cisne))
+
+	}
+	
+	test "Queremos saber si Luis Alberto interpreta bien la cancion La Familia" {
+
+		var laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+		assert.that(luisAlberto.interpretaBienLaCancion(laFamilia))
+
+	}
+	
+	test "Queremos saber si Luis Alberto interpreta bien la cancion Cisne" {
+
+		var cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
+ 		y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+		assert.that(luisAlberto.interpretaBienLaCancion(cisne))
+
+	}
+	
+	test "Queremos saber cuanto cobra Joaquin por la presentacion en el Luna Park"{
+		
+		assert.equals(50,joaquin.cuantoCobra(lunaPark))
+	}
+	
+	test "Queremos saber cuanto cobra Joaquin presentandonse solo en la trastienda"{
+		
+		trastienda.quitarUnMusico(lucia)
+		trastienda.quitarUnMusico(luisAlberto)
+		assert.equals(100,joaquin.cuantoCobra(trastienda)) // CORREGIR CODIGO EN JOAQUIN
+	}
+	
+	test "Queremos saber la capacidad de la trastienda para el 5/8/17"{
+		
+		trastienda.fecha(new Date(5,08,2017))
+		assert.equals(700,trastienda.capacidad())
+	}
+	
+	test "Queremos saber la capacidad de la trastienda para el 8/8/17"{
+		
+		trastienda.fecha(new Date(8,08,2017))
+		assert.equals(400,trastienda.capacidad())
+	}
+	
+	test "Queremos saber cuanto cobra Lucia por presentarse en el Luna Park"{
+		
+		assert.equals(500,lucia.cuantoCobra(lunaPark)) 	
+	
+	}
+	
+	test "Queremos saber cuanto cobra Lucia por presentarse en la trastienda"{
+		
+		assert.equals(400,lucia.cuantoCobra(trastienda)) 	
+	
+	}
+	
+	test "Queremos saber cuanto cobra Luis Alberto por presentarse en en Luna Park"{
+		
+		assert.equals(1000,luisAlberto.cuantoCobra(lunaPark)) 	
+	
+	}
+	
+	test "Queremos saber cuanto cobra Luis Alberto por presentarse en la trastienda"{
+		
+		assert.equals(1200,luisAlberto.cuantoCobra(trastienda)) 	
+	
+	}
+	
+	test "Queremos saber cuanto es el costo de presentacion del Luna Park"{
+		
+		assert.equals(1550,lunaPark.costo()) 	
+	
+	}
+	
+	test "Queremos saber cuanto es el costo de presentacion de la trastienda"{
+		
+		assert.equals(1650,trastienda.costo()) 	
+	
+	}
+		
+}
+
+
+
+
+
+
