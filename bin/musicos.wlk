@@ -7,7 +7,7 @@ object joaquin {
 	var habilidad = 20
 	
 	method interpretaBienLaCancion(unaCancion){
-		return unaCancion.duracion() > 300
+		return unaCancion.duracion() > 300 //DELEGAR A CANCION
 	}
 	
 	method cuantoCobra(unaPresentacion){
@@ -53,11 +53,11 @@ object lucia {
 	var habilidad = 70
 	
 	method interpretaBienLaCancion(unaCancion){
-		return (unaCancion.letra()).contains("familia")
+		return (unaCancion.letra()).contains("familia") //DELEGAR A CANCION
 	}
 	
 	method cuantoCobra(unaPresentacion){ 
-		if(self.esConcurrido(unaPresentacion)){
+		if(self.esConcurrido(unaPresentacion)){ //DELEGAR A PRESENTACION
 			return 500
 		}
 		else
@@ -65,7 +65,7 @@ object lucia {
 	}
 	
 	method esConcurrido(unaPresentacion){
-		return unaPresentacion.capacidad() > 5000
+		return unaPresentacion.capacidad() > 5000 //DELEGAR A PRESENTACION
 	}
 	
 	method grupoAlQuePertenece(){

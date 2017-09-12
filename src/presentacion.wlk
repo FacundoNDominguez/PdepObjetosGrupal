@@ -33,14 +33,6 @@ object lunaPark {
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
-	
-	method esConcurrido(){
-		return capacidad > 5000
-	}
-	
-	method laPresentacionEsAntesDeSeptiembre(){
-		return fecha <= new Date(1,09,2017)
-	}
 }
 
 object trastienda {
@@ -83,13 +75,4 @@ object trastienda {
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
-	
-	method esConcurrido(){
-		return self.capacidad() > 5000
-	}
-	
-	method laPresentacionEsAntesDeSeptiembre(){
-		return fecha <= new Date(1,09,2017)
-	}
-	
 }

@@ -13,7 +13,7 @@ object fender {
 }
 	
 object gibson {
-	var estado = null
+	var estado = true
 	
 	method valorGuitarra(){
 		if(self.laGuitarraEstaSana()){
@@ -31,7 +31,8 @@ object gibson {
 	}
 	
 	method laGuitarraEstaSana(){
-		return estado.equals(true)
+		return estado
 	}
+	
 	
 }

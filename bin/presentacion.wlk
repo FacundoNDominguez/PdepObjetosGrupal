@@ -3,6 +3,7 @@ import musicos.*
 object lunaPark {
 	var fecha = new Date(20,4,2017)
 	var musicos = [luisAlberto,joaquin,lucia]
+	var capacidad = 9290
 	
 	method fecha(){
 		return fecha
@@ -21,7 +22,12 @@ object lunaPark {
 	}
 	
 	method capacidad(){
-		return 9290
+		return capacidad
+	}
+	
+	method capacidad(unNumero){
+		capacidad = unNumero
+		
 	}
 	
 	method costo(){
