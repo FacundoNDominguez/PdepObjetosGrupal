@@ -32,4 +32,12 @@ class Cancion {
 	method letra(unaLetra){
 		letra = unaLetra
 	}
+	
+	method laCancionContieneLaPalabraFamilia(){
+		return letra.contains("familia")
+	}
+	
+	method laCancionEsLarga(){
+		return duracion > 300
+	}
 }

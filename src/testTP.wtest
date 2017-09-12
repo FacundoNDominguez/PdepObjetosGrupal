@@ -105,7 +105,7 @@ describe "group of tests" {
 		
 		trastienda.quitarUnMusico(lucia)
 		trastienda.quitarUnMusico(luisAlberto)
-		assert.equals(100,joaquin.cuantoCobra(trastienda)) // CORREGIR CODIGO EN JOAQUIN
+		assert.equals(100,joaquin.cuantoCobra(trastienda))
 	}
 	
 	test "Queremos saber la capacidad de la trastienda para el 5/8/17"{
