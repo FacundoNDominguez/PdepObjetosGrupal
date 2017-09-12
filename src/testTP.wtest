@@ -4,7 +4,17 @@ import presentacion.*
 import guitarras.*
 
 describe "group of tests" {
-
+	
+	var laFamilia
+	var cisne
+	
+	fixture{
+		
+		laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
+		
+		cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
+ 							y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
+	}
 	test "Joaquin canta en grupo y su habilidad es 25" {
 
 		assert.equals(25,joaquin.habilidad())
@@ -53,45 +63,36 @@ describe "group of tests" {
 	
 	test "Queremos saber si Joaquin interpreta bien la cancion La Familia" {
 
-		var laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		assert.notThat(joaquin.interpretaBienLaCancion(laFamilia))
 
 	}
 	
 	test "Queremos saber si Joaquin interpreta bien la cancion Cisne" {
 
-		var cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
- 		y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
 		assert.that(joaquin.interpretaBienLaCancion(cisne))
 
 	}
 	
 	test "Queremos saber si Lucia interpreta bien la cancion La Familia" {
 
-		var laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		assert.that(lucia.interpretaBienLaCancion(laFamilia))
 
 	}
 	
 	test "Queremos saber si Lucia interpreta bien la cancion Cisne" {
 
-		var cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
- 		y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
 		assert.notThat(lucia.interpretaBienLaCancion(cisne))
 
 	}
 	
 	test "Queremos saber si Luis Alberto interpreta bien la cancion La Familia" {
 
-		var laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		assert.that(luisAlberto.interpretaBienLaCancion(laFamilia))
 
 	}
 	
 	test "Queremos saber si Luis Alberto interpreta bien la cancion Cisne" {
 
-		var cisne = new Cancion("Cisne",312,"Hoy el viento se abrió quedó vacío el aire una vez más y el manantial brotó
- 		y nadie está aquí y puedo ver que solo estallan las hojas al brillar")
 		assert.that(luisAlberto.interpretaBienLaCancion(cisne))
 
 	}
@@ -105,7 +106,7 @@ describe "group of tests" {
 		
 		trastienda.quitarUnMusico(lucia)
 		trastienda.quitarUnMusico(luisAlberto)
-		assert.equals(100,joaquin.cuantoCobra(trastienda)) // CORREGIR CODIGO EN JOAQUIN
+		assert.equals(100,joaquin.cuantoCobra(trastienda))
 	}
 	
 	test "Queremos saber la capacidad de la trastienda para el 5/8/17"{
