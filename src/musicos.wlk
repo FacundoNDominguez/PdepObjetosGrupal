@@ -7,7 +7,7 @@ object joaquin {
 	var habilidad = 20
 	
 	method interpretaBienLaCancion(unaCancion){
-		return unaCancion.duracion() > 300 //DELEGAR A CANCION
+		return unaCancion.laCancionEsLarga()
 	}
 	
 	method cuantoCobra(unaPresentacion){
@@ -53,20 +53,17 @@ object lucia {
 	var habilidad = 70
 	
 	method interpretaBienLaCancion(unaCancion){
-		return (unaCancion.letra()).contains("familia") //DELEGAR A CANCION
+		return unaCancion.laCancionContieneLaPalabraFamilia()
 	}
 	
 	method cuantoCobra(unaPresentacion){ 
-		if(self.esConcurrido(unaPresentacion)){ //DELEGAR A PRESENTACION
+		if(unaPresentacion.esConcurrido()){
 			return 500
 		}
 		else
 		return 400
 	}
 	
-	method esConcurrido(unaPresentacion){
-		return unaPresentacion.capacidad() > 5000 //DELEGAR A PRESENTACION
-	}
 	
 	method grupoAlQuePertenece(){
 		return grupoAlQuePertenece
@@ -99,21 +96,17 @@ object luisAlberto {
 	}
 	
 	method cuantoCobra(unaPresentacion){
-		if(self.laPresentacionEsAntesDeSeptiembre(unaPresentacion)){
+		if(unaPresentacion.laPresentacionEsAntesDeSeptiembre()){
 			return 1000
 		}
 		return 1200
-	}
-	
-	method laPresentacionEsAntesDeSeptiembre(unaPresentacion){
-		return unaPresentacion.fecha() <= new Date(1,09,2017)
 	}
 	
 	method grupoAlQuePertenece(){
 		return grupoAlQuePertenece
 		}
 		
-		method grupoAlQuePertenece(unGrupo){
+	method grupoAlQuePertenece(unGrupo){
 		grupoAlQuePertenece = unGrupo
 	}
 	
