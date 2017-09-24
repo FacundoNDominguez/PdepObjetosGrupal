@@ -67,6 +67,21 @@ class Musico{
 		return grupoAlQuePertenece != null
 	}
 	
+	method esMinimalista(){
+		return albumes.all({album => album.todasSusCancionesSonCortas()})
+	}
+	
+	method cancionesConPalabra(palabra){
+		return albumes.map({album => album.cancionesConPalabra(palabra)})
+	}
+	
+	method cuantoDuraLaObra(){
+		return albumes.sum({album => album.duracionAlbum()})
+	}
+	
+	method laPego(){
+		return albumes.all({album => album.buenaVenta()})
+	}
 }
 
 
@@ -91,7 +106,7 @@ class DeGrupo inherits Musico{
 			return 50	
 	}
 	
-	method tocaSolo(unaPresentacion){
+	method tocaSolo(unaPresentacion){ //LE SACARIA LA RESPONSBILIDAD AL MUSICO Y SE LAS PASARIA A LAS CANCIONES
 		return ((unaPresentacion.musicos()).size() == 1) && self.esElMismo(unaPresentacion)
 	}
 	
