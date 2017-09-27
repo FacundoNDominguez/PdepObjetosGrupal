@@ -1,8 +1,10 @@
-import musicoo.*
+import musico.*
 
 class DeGrupo inherits Musico {
 
-	constructor(unGrupo,losAlbunes,unValor,unaHabilidad) = super(unGrupo,losAlbunes,unValor,unaHabilidad)
+	constructor(unGrupo,losAlbunes,unaHabilidad,cantidadAumentar) = super(unGrupo,losAlbunes,unaHabilidad) {
+			self.aumentarHabilidad(cantidadAumentar)
+	}
 	//Aca necesitamos modificar el constructor para recibir un parametro mas y llamar a aumentarHabilidad(cantidad).
 	
 	method interpretaBienLaCancion(unaCancion){
@@ -25,30 +27,11 @@ class DeGrupo inherits Musico {
 		return (unaPresentacion.musicos()).first() == self
 	}
 	
-	override method grupoAlQuePertenece(){
-		return grupoAlQuePertenece
-		}
-		
-	method grupoAlQuePertenece(unGrupo){
-		grupoAlQuePertenece = unGrupo
-		}
-	
-	method tocaEnGrupo(){
-		return grupoAlQuePertenece != null
-	}
-	
-	override method habilidad(){
-		if(self.tocaEnGrupo()){
-			return habilidad += 5
-		}
-		else
-		
-		return habilidad
-	}
-	
 	method aumentarHabilidad(cantidad) {
-		habilidad = habilidad + cantidad
-	}
+		if(!self.esSolista()){
+			habilidad += cantidad
+		}
+}
 
 
 }
