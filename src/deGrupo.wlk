@@ -3,6 +3,7 @@ import musicoo.*
 class DeGrupo inherits Musico {
 
 	constructor(unGrupo,losAlbunes,unValor,unaHabilidad) = super(unGrupo,losAlbunes,unValor,unaHabilidad)
+	//Aca necesitamos modificar el constructor para recibir un parametro mas y llamar a aumentarHabilidad(cantidad).
 	
 	method interpretaBienLaCancion(unaCancion){
 		return unaCancion.laCancionEsLarga()
@@ -43,6 +44,10 @@ class DeGrupo inherits Musico {
 		else
 		
 		return habilidad
+	}
+	
+	method aumentarHabilidad(cantidad) {
+		habilidad = habilidad + cantidad
 	}
 
 

@@ -1,7 +1,7 @@
 import Cancion.*
 import presentacion.*
 import guitarras.*
-import presentacionn.*
+import presentacion.*
 
 object joaquin {
 	var grupoAlQuePertenece = "Pimpinela"
