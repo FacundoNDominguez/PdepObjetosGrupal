@@ -10,6 +10,10 @@ class Musico {
 		
 	}
 	
+	method agregarAlbum(unAlbum){
+		albumes.add(unAlbum)
+	}
+	
 	method grupoAlQuePertenece(unValor){
 		grupoAlQuePertenece = unValor
 	}
