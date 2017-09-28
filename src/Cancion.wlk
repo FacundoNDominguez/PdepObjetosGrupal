@@ -40,4 +40,9 @@ class Cancion {
 	method laCancionEsLarga(){
 		return duracion > 300
 	}
+	
+	
+	method laCancionEsCorta(){
+		return duracion < 180
+	}
 }
