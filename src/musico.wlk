@@ -33,5 +33,16 @@ class Musico {
 	method cancionesQueTienen(unaPalabra){
 		return albumes.forEach({ unAlbum => unAlbum.cancionesConPalabra(unaPalabra) })
 	}
-
+	
+	method cuantoDuraLaObra(){
+		return albumes.forEach({ unAlbum => unAlbum.duracionAlbum() })
+	}
+	
+	method cancionMasLarga(){
+		return albumes.forEach({ unAlbum => unAlbum.cancionConMasLetra() })
+	}
+	
+	method laPego(){
+		return albumen.forEach({ unAlbum => unAlbum.buenaVenta() })
+	}
 }
