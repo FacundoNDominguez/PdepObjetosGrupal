@@ -35,19 +35,19 @@ class Musico {
 	}
 	
 	method esMinimalista(){
-		return albumes.forEach({ unAlbum => unAlbum.todasSusCancionesSonCortas() }) 
+		return albumes.all({album => album.todasSusCancionesSonCortas()})
 	}
 	
 	method cancionesQueTienen(unaPalabra){
-		return albumes.forEach({ unAlbum => unAlbum.cancionesConPalabra(unaPalabra) })
+		return albumes.flatMap({ unAlbum => unAlbum.cancionesConPalabra(unaPalabra) })
 	}
 	
 	method cuantoDuraLaObra(){
-		return albumes.forEach({ unAlbum => unAlbum.duracionAlbum() })
+		return albumes.sum({ unAlbum => unAlbum.duracionAlbum() })
 	}
 	
 	method cancionMasLarga(){
-		return albumes.forEach({ unAlbum => unAlbum.cancionConMasLetra() })
+		return albumes.max({ unAlbum => unAlbum.cancionConMasLetra() })
 	}
 	
 	method laPego(){

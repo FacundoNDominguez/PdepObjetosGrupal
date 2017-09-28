@@ -42,7 +42,7 @@ describe "group of tests" {
 										el nuevo milenio ha de encontrarnos, junto coraz�n, como so�amos")
 		
 		almaDeDiamante = new Cancion("Alma de Diamante",216,"Ven a m� con tu dulce luz alma de diamante. Y aunque el sol se nuble
-									despu�s sos alma de diamante. Cielo o piel silencio o verdad sos alma de diamante.
+									despu�s sos alma de diamante. cielo o piel silencio o verdad sos alma de diamante.
 									Por eso ven as� con la humanidad alma de diamante")
 									
 	 	crisantemo = new Cancion("Cristanemo",175,"T�came junto a esta pared, yo quede por aqu�... cuando no hubo m�s luz...
@@ -54,7 +54,7 @@ describe "group of tests" {
 		
 		laSole = new Albumes("La Sole",[eres,corazonAmericano],new Date(04,02,2005),200000,130000)
 		
-		paraLosArboles = new Albumes("Para los Arboles",[cisne],new Date(31,03,2003),50000,49000)
+		paraLosArboles = new Albumes("Para los Arboles",[cisne, almaDeDiamante],new Date(31,03,2003),50000,49000)
 		
 		justCrisantemo = new Albumes("Just Crisantemo",[crisantemo],new Date(05,12,2007),28000,27500)
  		
@@ -240,11 +240,11 @@ describe "group of tests" {
 	}
 	
 	test "Saber qué canciones de Luis Alberto tienen la palabra “cielo”"{
-		assert.equals([crisantemo,almaDeDiamante], luisAlberto.cancionesQueTienen("cielo"))
+		assert.equals([almaDeDiamante,crisantemo], luisAlberto.cancionesQueTienen("cielo"))
 	}
 	
 	test "Saber qué canciones de Luis Alberto tienen la palabra “pujante”"{
-		assert.equals([],luisAlberto.cancionesQueTienen("cielo"))
+		assert.equals([],luisAlberto.cancionesQueTienen("pujante"))
 	}
 	
 	test "Saber cuántos segundos dura la obra de Kike"{
