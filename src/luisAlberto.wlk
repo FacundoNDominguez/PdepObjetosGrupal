@@ -1,14 +1,9 @@
 import Cancion.*
 import presentacion.*
 import guitarras.*
+import musico.*
 
-object luisAlberto {
-	var grupoAlQuePertenece = null
-	var albumes =[]
-	
-	method albumes(){
-		return albumes
-	}
+object luisAlberto inherits Musico(null,[],0){
 	
 	method interpretaBienLaCancion(unaCancion){
 		return true
@@ -21,16 +16,8 @@ object luisAlberto {
 			return 1200
 	}
 	
-	method grupoAlQuePertenece(){
-		return grupoAlQuePertenece
-		}
-		
-	method grupoAlQuePertenece(unGrupo){
-		grupoAlQuePertenece = unGrupo
-	}
-	
-	method habilidad(unaGuitarra){
-		return 100.min(8 * (unaGuitarra.valorGuitarra()))
+	method modificarHabilidad(unaGuitarra){
+		habilidad = 100.min(8 * (unaGuitarra.valorGuitarra()))
 	}
 	
 }

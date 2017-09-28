@@ -21,7 +21,7 @@ class Albumes {
 	}
 	
 	method cancionesConPalabra(palabra){
-		return canciones.filter({cancion => cancion.laCancionContieneLaPalabra(palabra)})
+		return canciones.filter({cancion => cancion.laCancionContiene(palabra)})
 	}
 	
 	method duracionAlbum(){

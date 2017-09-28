@@ -10,6 +10,10 @@ class Musico {
 		
 	}
 	
+	method grupoAlQuePertenece(unValor){
+		grupoAlQuePertenece = unValor
+	}
+	
 	method grupoAlQuePertenece(){
 		return grupoAlQuePertenece
 	}
@@ -43,6 +47,7 @@ class Musico {
 	}
 	
 	method laPego(){
-		return albumen.forEach({ unAlbum => unAlbum.buenaVenta() })
+		//return albumes.forEach({ unAlbum => unAlbum.buenaVenta() }) //me parece que va un all en vez de un forEach
+		return albumes.all({ unAlbum => unAlbum.buenaVenta() })
 	}
 }

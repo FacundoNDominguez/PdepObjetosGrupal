@@ -60,21 +60,24 @@ describe "group of tests" {
 		
 	test "Luis Alberto toca con su guitarra Fender y queremos saber su habilidad" {
 
-		assert.equals(80,luisAlberto.habilidad(fender))
+		luisAlberto.modificarHabilidad(fender)
+		assert.equals(80,luisAlberto.habilidad())
 
 	}
 	
 	test "Luis Alberto toca con su guitarra Gibson sana y queremos saber su habilidad" {
 
+		luisAlberto.modificarHabilidad(gibson)
 		gibson.estado(true)
-		assert.equals(100,luisAlberto.habilidad(gibson))
+		assert.equals(100,luisAlberto.habilidad())
 
 	}
 	
 	test "Luis Alberto toca con su guitarra Gibson rota y queremos saber su habilidad" {
 
 		gibson.estado(false)
-		assert.equals(40,luisAlberto.habilidad(gibson))
+		luisAlberto.modificarHabilidad(gibson)
+		assert.equals(40,luisAlberto.habilidad())
 
 	}
 	

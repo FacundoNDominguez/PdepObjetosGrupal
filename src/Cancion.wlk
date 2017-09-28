@@ -45,4 +45,8 @@ class Cancion {
 	method laCancionEsCorta(){
 		return duracion < 180
 	}
+	
+	method largoDeLetra(){
+		return letra.size()
+	}
 }
