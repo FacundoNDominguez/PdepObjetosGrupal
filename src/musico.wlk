@@ -25,6 +25,13 @@ class Musico {
 	method habilidad(){
 		return habilidad
 	}
-
+	
+	method esMinimalista(){
+		return albumes.forEach({ unAlbum => unAlbum.todasSusCancionesSonCortas() }) 
+	}
+	
+	method cancionesQueTienen(unaPalabra){
+		return albumes.forEach({ unAlbum => unAlbum.cancionesConPalabra(unaPalabra) })
+	}
 
 }
