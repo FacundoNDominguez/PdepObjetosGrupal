@@ -254,6 +254,34 @@ describe "group of tests" {
 	test "Saber cuántos segundos dura la obra de Soledad"{
 		assert.equals(299,soledad.cuantoDuraLaObra())
 	}
+	
+	test "Saber cuántos segundos dura la obra de Luis Alberto"{
+		assert.equals(703,luisAlberto.cuantoDuraLaObra())
+	}
+	
+	test "Saber qué canción es más larga del álbum “Para los árboles”"{
+		assert.equals(almaDeDiamante,paraLosArboles.cancionConMasLetra())
+	}
+	
+	test "Saber cuál es la canción más larga del álbum “La Sole”"{
+		assert.equals(eres, laSole.cancionConMasLetra())
+	}
+	
+	test "Queremos saber cuál es la canción más larga del álbum “Especial La Familia”"{
+		assert.equals(laFamilia, especialLaFamilia.cancionConMasLetra())
+	}
+	
+	test "Queremos saber si Luis Alberto la pegó"{
+		assert.that(luisAlberto.laPego())
+	}
+	
+	test "Queremos saber si Soledad la pegó"{
+		assert.notThat(soledad.laPego())
+	}
+	
+	test "Queremos saber si Joaquín la pegó"{
+		assert.that(joaquin.laPego())
+	}
 }
 
 
