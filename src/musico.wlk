@@ -54,4 +54,14 @@ class Musico {
 		//return albumes.forEach({ unAlbum => unAlbum.buenaVenta() }) //me parece que va un all en vez de un forEach
 		return albumes.all({ unAlbum => unAlbum.buenaVenta() })
 	}
+	
+	method interpretaBienLaCancion(unaCancion){
+		return self.esDeSuAutoria(unaCancion) || habilidad > 60
+	}
+	
+	method esDeSuAutoria(unaCancion){
+		return albumes.anyOne({ album => album.perteneceAlALbum(unaCancion) })
+	}
+	
+
 }

@@ -7,12 +7,6 @@ constructor(unGrupo,losAlbunes,unaHabilidad) = super(unGrupo,losAlbunes,unaHabil
 			habilidad -= 20
 	}
 }
-//restar habilidad si toca en grupo
-	
-	method interpretaBienLaCancion(unaCancion,palabra){
-		return unaCancion.laCancionContiene(palabra)
-	}
-	
 	method cuantoCobra(unaPresentacion){ 
 		if(unaPresentacion.esConcurrido()){
 			return 500

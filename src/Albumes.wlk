@@ -35,4 +35,12 @@ class Albumes {
 	method buenaVenta(){
 		return (unidadesVendidas/unidadesALaVenta) > 0.75
 	}
+	
+	method cancionMasLarga(){
+		canciones.max({ cancion => cancion.duracion() })
+	}
+	
+	method perteneceAlAlbum(unaCancion){
+		return canciones.elem(unaCancion)
+	}
 }

@@ -6,11 +6,6 @@ class DeGrupo inherits Musico {
 	constructor(unGrupo,losAlbunes,unaHabilidad,cantidadAumentar) = super(unGrupo,losAlbunes,unaHabilidad) {
 			self.aumentarHabilidad(cantidadAumentar)
 	}
-	//Aca necesitamos modificar el constructor para recibir un parametro mas y llamar a aumentarHabilidad(cantidad).
-	
-	method interpretaBienLaCancion(unaCancion){
-		return unaCancion.laCancionEsLarga()
-	}
 	
 	method cuantoCobra(unaPresentacion){
 		if (self.tocaSolo(unaPresentacion)){

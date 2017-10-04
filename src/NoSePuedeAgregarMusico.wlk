@@ -1,0 +1,6 @@
+
+class NoSePuedeAgregarMusico inherits Exception {
+
+
+
+}
