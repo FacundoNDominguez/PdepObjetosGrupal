@@ -17,7 +17,7 @@ object pdepAlooza inherits Presentacion(lunaPark,new Date(15,12,2017),[]){
 		} 
 		else
 		
-		if(!(unMusico.esDeSuAutoria(cancionDeAliciaEnELPais)){ //trato de hardcodear esa cancion...
+		if(!(unMusico.sabeTocarAliciaEnElPais())){ 
 			throw new NoSePuedeAgregarMusico("no compuso ninguna cancion")
 		}
 		else

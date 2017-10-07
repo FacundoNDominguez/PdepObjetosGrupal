@@ -34,33 +34,33 @@ describe "group of tests" {
 		laFamilia = new Cancion("La Familia",264,"Quiero brindar por mi gente sencilla, por el amor brindo por la familia")
 		
 		cisne = new Cancion("Cisne",312,"Hoy el viento se
-							abrió quedó vacío el aire una vez más y el manantial brotó y nadie está
-							aquí y puedo ver que solo estallan las hojas al brillar")
+							abriï¿½ quedï¿½ vacï¿½o el aire una vez mï¿½s y el manantial brotï¿½ y nadie estï¿½
+							aquï¿½ y puedo ver que solo estallan las hojas al brillar")
  		
  		eres = new Cancion("Eres",145,"Eres lo mejor que me
-							pasó en la vida, no tengo duda, no habrá más nada después de ti. Eres
-							lo que le dio brillo al día a día, y así será por siempre, no cambiará,
-							hasta el final de mis días")
+							pasï¿½ en la vida, no tengo duda, no habrï¿½ mï¿½s nada despuï¿½s de ti. Eres
+							lo que le dio brillo al dï¿½a a dï¿½a, y asï¿½ serï¿½ por siempre, no cambiarï¿½,
+							hasta el final de mis dï¿½as")
 		
 		corazonAmericano = new Cancion("Corazon Americano",154,"Canta
-										corazón, canta más alto, que tu pena al fin se va marchando, el nuevo
-										milenio ha de encontrarnos, junto corazón, como soñamos.")
+										corazï¿½n, canta mï¿½s alto, que tu pena al fin se va marchando, el nuevo
+										milenio ha de encontrarnos, junto corazï¿½n, como soï¿½amos.")
 		
-		almaDeDiamante = new Cancion("Alma de Diamante",216,"Ven a mí
+		almaDeDiamante = new Cancion("Alma de Diamante",216,"Ven a mï¿½
 										con tu dulce luz alma de diamante. Y aunque el sol se nuble
-										después sos alma de diamante. Cielo o piel silencio o verdad sos
-										alma de diamante. Por eso ven así con la humanidad alma de
+										despuï¿½s sos alma de diamante. Cielo o piel silencio o verdad sos
+										alma de diamante. Por eso ven asï¿½ con la humanidad alma de
 										diamante")
 									
-	 	crisantemo = new Cancion("Cristanemo",175,"Tócame junto a
-								esta pared, yo quede por aquí... cuando no hubo más luz...
-								quiero mirar a través de mi piel... Crisantemo, que se abrió...
+	 	crisantemo = new Cancion("Cristanemo",175,"Tï¿½came junto a
+								esta pared, yo quede por aquï¿½... cuando no hubo mï¿½s luz...
+								quiero mirar a travï¿½s de mi piel... Crisantemo, que se abriï¿½...
 								encuentra el camino hacia el cielo")
 		
-		aliciaEnElPais = new Cancion("Alicia en el Pais",510,"Quién sabe Alicia, este país no estuvo hecho porque sí. Te vas a ir, vas a
-									salir pero te quedas, ¿dónde más vas a ir? Y es que aquí, sabes el
+		aliciaEnElPais = new Cancion("Alicia en el Pais",510,"Quiï¿½n sabe Alicia, este paï¿½s no estuvo hecho porque sï¿½. Te vas a ir, vas a
+									salir pero te quedas, ï¿½dï¿½nde mï¿½s vas a ir? Y es que aquï¿½, sabes el
 									trabalenguas, trabalenguas, el asesino te asesina, y es mucho para ti. Se
-									acabó ese juego que te hacía feliz.")
+									acabï¿½ ese juego que te hacï¿½a feliz.")
 		
 		
 		
@@ -75,11 +75,12 @@ describe "group of tests" {
  		
  		
  		joaquin = new DeGrupo("Pimpinela",[especialLaFamilia],20,5)
- 		lucia = new VocalistaPopular("Pimpinela",[],70)
+ 		lucia = new VocalistaPopular("Pimpinela",[],70,"amor")
  		kike =  new Musico("",[],0)
  		soledad = new Musico("",[laSole],0)
  		luisAlberto.agregarAlbum(paraLosArboles)
  		luisAlberto.agregarAlbum(justCrisantemo)
+ 		luisAlberto.modificarHabilidad(gibson)
  		
  		presentacion1 = new Presentacion(lunaPark,new Date(20,4,2017),[luisAlberto,joaquin,lucia])
  		presentacion2 = new Presentacion(trastienda,new Date(15,11,2017),[luisAlberto,joaquin,lucia])
@@ -149,19 +150,19 @@ describe "group of tests" {
 	
 	test "Queremos saber si Lucia interpreta bien la cancion La Familia" {
 
-		assert.that(lucia.interpretaBienLaCancion(laFamilia,"familia"))
+		assert.that(lucia.interpretaBienLaCancion(laFamilia))
 
 	}
 	
 	test "Queremos saber si Lucia interpreta bien la cancion Cisne" {
 
-		assert.notThat(lucia.interpretaBienLaCancion(cisne,"familia"))
+		assert.notThat(lucia.interpretaBienLaCancion(cisne))
 
 	}
 	
 	test "Queremos saber si Luis Alberto interpreta bien la cancion La Familia" {
 
-		assert.that(luisAlberto.interpretaBienLaCancion(laFamilia))
+		assert.notThat(luisAlberto.interpretaBienLaCancion(laFamilia))
 
 	}
 	

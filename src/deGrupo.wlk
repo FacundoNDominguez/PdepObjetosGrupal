@@ -27,7 +27,10 @@ class DeGrupo inherits Musico {
 		if(!self.esSolista()){
 			habilidad += cantidad
 		}
-}
-
+	}
+	
+	override method interpretaBienLaCancion(unaCancion){
+		return (unaCancion.duracion() > 300)
+	}
 
 }

@@ -56,12 +56,19 @@ class Musico {
 	}
 	
 	method interpretaBienLaCancion(unaCancion){
-		return self.esDeSuAutoria(unaCancion) || habilidad > 60
+		return habilidad > 60 || self.esDeSuAutoria(unaCancion)  
 	}
 	
 	method esDeSuAutoria(unaCancion){
 		return albumes.anyOne({ album => album.perteneceAlALbum(unaCancion) })
 	}
 	
+	method saberTocarAliciaEnElPais(){
+		const letraDeAlicia = "Quién sabe Alicia, este país no estuvo hecho porque sí. Te vas a ir, vas a salir pero te quedas, ¿dónde más vas a ir? Y es que aquí, sabes el trabalenguas, trabalenguas, el asesino te asesina, y es mucho para ti. Se acabó ese juego que te hacía feliz."
+		
+		var cancionAlicia = (self.cancionesQueTienen(letraDeAlicia)).first()
+		
+		return (cancionAlicia.duracion() == 510 ) && (cancionAlicia.titulo() == "Canción de Alicia en el país")
+	}
 
 }

@@ -2,7 +2,10 @@ import musico.*
 
 class VocalistaPopular inherits Musico{
 
-constructor(unGrupo,losAlbunes,unaHabilidad) = super(unGrupo,losAlbunes,unaHabilidad) {
+var palabraFavorita
+
+constructor(unGrupo,losAlbunes,unaHabilidad, unaPalabra) = super(unGrupo,losAlbunes,unaHabilidad) {
+	palabraFavorita = unaPalabra
 	if(!self.esSolista()){
 			habilidad -= 20
 	}
@@ -15,5 +18,7 @@ constructor(unGrupo,losAlbunes,unaHabilidad) = super(unGrupo,losAlbunes,unaHabil
 		return 400
 	}
 
-
+	override method interpretaBienLaCancion(unaCancion){
+		return unaCancion.laCancionContiene(palabraFavorita)
+	}
 }
