@@ -30,7 +30,7 @@ class DeGrupo inherits Musico {
 	}
 	
 	override method interpretaBienLaCancion(unaCancion){
-		return (unaCancion.duracion() > 300)
+		return (unaCancion.duracion() < 300)
 	}
 
 }

@@ -60,7 +60,7 @@ class Musico {
 	}
 	
 	method esDeSuAutoria(unaCancion){
-		return albumes.anyOne({ album => album.perteneceAlALbum(unaCancion) })
+		return albumes.any({ album => album.perteneceAlALbum(unaCancion) })
 	}
 	
 	method saberTocarAliciaEnElPais(){

@@ -8,6 +8,7 @@ import musico.*
 import deGrupo.*
 import vocalistaPopular.*
 import Albumes.*
+import MashUps.*
 
 describe "group of tests" {
 	
@@ -296,6 +297,23 @@ describe "group of tests" {
 	
 	test "Queremos saber si Joaquin la pego"{
 		assert.that(joaquin.laPego())
+	}
+	
+	test "La cancion mas larga de 'Para los Arboles' es cisne"{
+		assert.equals(cisne, paraLosArboles.cancionMasLarga())
+	}
+	
+	test "La cancion de titulo mas largo de 'Para Los Arboles' es Alma de Diamante"{
+		assert.equals(almaDeDiamante, paraLosArboles.cancionTituloLargo())
+	}
+	
+	test "El mashup de 'Corazon Americano' y 'Alma De Diamante' dura 216 segundos"{
+		var mashup = (new MashUp([corazonAmericano, almaDeDiamante], ""))
+		assert.equals(216, mashup.duracion() )
+	}
+	
+	test "Kike canta bien 'Cisne'"{
+		assert.that(kike.interpretaBienLaCancion(cisne))
 	}
 }
 

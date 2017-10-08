@@ -7,7 +7,7 @@ class MashUp inherits Cancion {
 	}
 
 	method mashTitulo(canciones){
-		self.nombre(canciones.flatMap({cancion => cancion.letra()}))
+		self.nombre(canciones.map({cancion => cancion.letra()}))
 	}
 	
 	method mashDuracion(canciones){

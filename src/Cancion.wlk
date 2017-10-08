@@ -50,4 +50,8 @@ class Cancion {
 		return letra.size()
 	}
 	
+	method largoTitulo(){
+		return nombre.size()
+	}
+	
 }

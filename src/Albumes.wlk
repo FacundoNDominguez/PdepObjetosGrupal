@@ -32,12 +32,16 @@ class Albumes {
 		return canciones.max({cancion => cancion.largoDeLetra()})
 	}
 	
+	method cancionTituloLargo(){
+		return canciones.max({cancion => cancion.largoTitulo()})
+	}
+	
 	method buenaVenta(){
 		return (unidadesVendidas/unidadesALaVenta) > 0.75
 	}
 	
 	method cancionMasLarga(){
-		canciones.max({ cancion => cancion.duracion() })
+		return canciones.max({ cancion => cancion.duracion() })
 	}
 	
 	method perteneceAlAlbum(unaCancion){
