@@ -1,13 +1,14 @@
 import Cancion.*
 class Remix inherits Cancion {
 	
-	constructor (titulo,tiempo,texto) = super(titulo,tiempo,texto){
-		self.remixar()
+	constructor (cancion) = super("",0,""){
+		self.remixar(cancion)
 	}
 
 	method remixar(){
-		self.duracion(tiempo * 3)
-		
+		self.duracion(self.duracion() * 3)
+		self.nombre("Remix de " + self.nombre())
+		self.letra("mueve tu cuelpo baby" + self.letra() + " yeah oh yeah")
 	}
 
 }
