@@ -6,9 +6,9 @@ class Remix inherits Cancion {
 	}
 
 	method remixar(){
-		self.duracion(self.duracion() * 3)
-		self.nombre("Remix de " + self.nombre())
-		self.letra("mueve tu cuelpo baby" + self.letra() + " yeah oh yeah")
+		self.duracion(duracion * 3)
+		self.nombre("Remix de " + nombre)
+		self.letra("mueve tu cuelpo baby" + letra + " yeah oh yeah")
 	}
 
 }

@@ -9,6 +9,10 @@ import deGrupo.*
 import vocalistaPopular.*
 import Albumes.*
 import MashUps.*
+import Largueros.*
+import Impareros.*
+import Palabreros.*
+
 
 describe "group of tests" {
 	
@@ -315,6 +319,7 @@ describe "group of tests" {
 	test "Kike canta bien 'Cisne'"{
 		assert.that(kike.interpretaBienLaCancion(cisne))
 	}
+	
 }
 
 
