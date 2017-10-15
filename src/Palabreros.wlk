@@ -1,21 +1,14 @@
-import musico.*
-
-class Palabreros inherits Musico {
+class Palabreros{
 	
-	var palabraFavorita
+	var palabra
 	
-	constructor(unGrupo,losAlbumes,unaHabilidad,unaPalabra) = super(unGrupo,losAlbumes,unaHabilidad){
-		palabraFavorita = unaPalabra
+	constructor(unaPalabra){
+		palabra = unaPalabra
 	}
 	
-	method palabraFavorita(){
-		return palabraFavorita
+	method interpretarCancion(unaCancion){
+		return unaCancion.laCancionContiene(palabra)
 	}
-	
-	override method interpretaBienLaCancion(unaCancion){
-		return unaCancion.laCancionContiene(palabraFavorita)
-	}
-	
 
 
 

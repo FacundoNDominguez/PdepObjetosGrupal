@@ -1,13 +1,9 @@
-import musico.*
 
-class Impareros inherits Musico {
+class Impareros {
 	
-	constructor(unGrupo,losAlbumes,unaHabilidad) = super(unGrupo,losAlbumes,unaHabilidad){}
-	
-	override method interpretaBienLaCancion(unaCancion){
+	method interpretarCancion(unaCancion){
 		return unaCancion.duracion().odd()
 	}
-
 
 
 }

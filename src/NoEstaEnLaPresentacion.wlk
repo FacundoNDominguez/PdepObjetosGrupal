@@ -1,0 +1,6 @@
+
+class NoEstaEnLaPresentacion inherits Exception{
+
+
+
+}

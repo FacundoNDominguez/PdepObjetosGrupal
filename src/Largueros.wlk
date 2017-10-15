@@ -1,16 +1,16 @@
-import musico.*
 
-class Largueros inherits Musico{
+class Largueros{
 	
 	var tiempo
 	
-	constructor(unGrupo,losAlbumes,unaHabilidad,unosSegundos) = super(unGrupo,losAlbumes,unaHabilidad){
-		tiempo = unosSegundos
+	constructor (unTiempo){
+		tiempo = unTiempo
 	}
 	
-	override method interpretaBienLaCancion(unaCancion){
+	method interpretarCancion(unaCancion){
 		return unaCancion.duracion() > tiempo
 	}
+
 
 
 

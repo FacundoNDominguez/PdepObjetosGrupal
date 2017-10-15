@@ -1,18 +1,26 @@
 import musico.*
 import presentacion.*
+import NoEstaEnLaPresentacion.*
 
 class DeGrupo inherits Musico {
 
-	constructor(unGrupo,losAlbunes,unaHabilidad,cantidadAumentar) = super(unGrupo,losAlbunes,unaHabilidad) {
+	constructor(unGrupo,losAlbunes,unaHabilidad,unaFormaDeTocar, unaFormaDeCobrar,cantidadAumentar) = super(unGrupo,losAlbunes,unaHabilidad,unaFormaDeTocar, unaFormaDeCobrar) {
 			self.aumentarHabilidad(cantidadAumentar)
 	}
 	
 	method cuantoCobra(unaPresentacion){
+		
+		try {self.formaDeCobrar().tocaEnLaPresentacion(unaPresentacion, self)}
+		
+		catch e: NoEstaEnLaPresentacion{
+			console.println("el Musico" + e.getMessage())
+		}
+		
 		if (self.tocaSolo(unaPresentacion)){
-			return 100
+			return self.formaDeCobrar().cobrarPresentacion(unaPresentacion,100)
 			}
 		else
-			return 50	
+			return self.formaDeCobrar().cobrarPresentacion(unaPresentacion,50)	
 	}
 	
 	method tocaSolo(unaPresentacion){
@@ -30,7 +38,7 @@ class DeGrupo inherits Musico {
 	}
 	
 	override method interpretaBienLaCancion(unaCancion){
-		return (unaCancion.duracion() < 300)
+		return (unaCancion.duracion() < 300) || self.formaDeTocar().interpretarCancion(unaCancion)
 	}
 
 }

@@ -2,12 +2,30 @@ class Musico {
 	var grupoAlQuePertenece
 	var albumes = []
 	var habilidad
+	var formaDeTocar
+	var formaDeCobrar
 	
-	constructor(unGrupo,losAlbumes,unaHabilidad){
+	constructor(unGrupo,losAlbumes,unaHabilidad, unaFormaDeTocar, unaFormaDeCobrar){
 		grupoAlQuePertenece = unGrupo
 		albumes = losAlbumes
 		habilidad = unaHabilidad
+		formaDeCobrar = unaFormaDeCobrar
+		formaDeTocar = unaFormaDeTocar
 		
+	}
+	
+	method formaDeTocar(){
+		return formaDeTocar
+	}
+	method formaDeTocar(unaForma){
+		formaDeTocar = unaForma
+	}
+	
+	method formaDeCobrar(){
+		return formaDeCobrar
+	}
+	method formaDeCobrar(unaForma){
+		formaDeCobrar = unaForma
 	}
 	
 	method agregarAlbum(unAlbum){
@@ -56,7 +74,7 @@ class Musico {
 	}
 	
 	method interpretaBienLaCancion(unaCancion){
-		return habilidad > 60 || self.esDeSuAutoria(unaCancion)  
+		return habilidad > 60 || formaDeTocar.interpretarCancion(unaCancion) || self.esDeSuAutoria(unaCancion) 
 	}
 	
 	method esDeSuAutoria(unaCancion){

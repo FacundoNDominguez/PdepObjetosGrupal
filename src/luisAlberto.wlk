@@ -3,7 +3,7 @@ import presentacion.*
 import guitarras.*
 import musico.*
 
-object luisAlberto inherits Musico(null,[],0){
+object luisAlberto inherits Musico(null,[],0,null,null){
 	
 	method cuantoCobra(unaPresentacion){
 		if(unaPresentacion.laPresentacionEsAntesDeSeptiembre()){

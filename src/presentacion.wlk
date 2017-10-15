@@ -37,6 +37,10 @@ class Presentacion {
 		musicos.remove(unMusico)
 	}
 	
+	method participa(unMusico){
+		return musicos.contains(unMusico)
+	}
+	
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
