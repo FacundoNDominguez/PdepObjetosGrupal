@@ -5,12 +5,18 @@ class Presentacion {
 	var lugar
 	var fecha
 	var musicos = []
+	var bandas= []
 	
-	constructor(unLugar,unaFecha,losMusicos){
+	constructor(unLugar,unaFecha,losMusicos, lasBandas){
 		lugar = unLugar
 		fecha = unaFecha
 		musicos = losMusicos
-		
+		bandas = lasBandas
+		self.sacarAMusicosSiEstanBanda()
+	}
+	
+	method sacarAMusicosSiEstanBanda(){
+		musicos.removeAll(musicos.filter({musico => bandas.any({banda => banda.perteneceABanda(musico)})}) )
 	}
 	
 	method lugar(){
@@ -57,7 +63,16 @@ class Presentacion {
 		return lugar.capacidad(fecha)
 	}
 	
-	
+	method agregarBanda(unaBanda){
+		bandas.add(unaBanda)
+		self.sacarAMusicosSiEstanBanda()
+	}
+	method quitarBanda(unaBanda){
+		bandas.remove(unaBanda)
+	}
 
+	method magia(){
+		return musicos.sum({musico => musico.habilidad()}) + bandas.sum({banda => banda.habilidad()})
+	}
 
 }

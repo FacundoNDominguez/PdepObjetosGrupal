@@ -1,12 +1,12 @@
 class Musico {
-	var grupoAlQuePertenece
+	var bandaAlquePertenece
 	var albumes = []
 	var habilidad
 	var formaDeTocar
 	var formaDeCobrar
 	
 	constructor(unGrupo,losAlbumes,unaHabilidad, unaFormaDeTocar, unaFormaDeCobrar){
-		grupoAlQuePertenece = unGrupo
+		bandaAlquePertenece = unGrupo
 		albumes = losAlbumes
 		habilidad = unaHabilidad
 		formaDeCobrar = unaFormaDeCobrar
@@ -33,11 +33,11 @@ class Musico {
 	}
 	
 	method grupoAlQuePertenece(unValor){
-		grupoAlQuePertenece = unValor
+		bandaAlquePertenece = unValor
 	}
 	
 	method grupoAlQuePertenece(){
-		return grupoAlQuePertenece
+		return bandaAlquePertenece
 	}
 	
 	method albumes(){
@@ -89,4 +89,8 @@ class Musico {
 		return (cancionAlicia.duracion() == 510 ) && (cancionAlicia.titulo() == "Canción de Alicia en el país")
 	}
 
+	method interpretaBienEstasCanciones(unasCanciones){
+		return unasCanciones.filter({cancion=> self.interpretaBienLaCancion(cancion)})
+	}
+	
 }
