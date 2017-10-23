@@ -31,3 +31,19 @@ class Banda {
 	}
 
 }
+
+class Representante{
+	var fee
+	
+	constructor (n) {
+		fee = n
+	}
+	
+	method actualizarFee(n){
+		fee = n
+	}
+	
+	method cuantoCobra(){
+		return fee
+	}
+}

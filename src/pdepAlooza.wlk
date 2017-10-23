@@ -4,7 +4,7 @@ import musico.*
 import NoSePuedeAgregarMusico.*
 import Cancion.*
 
-object pdepAlooza inherits Presentacion(lunaPark,new Date(15,12,2017),[]){
+object pdepAlooza inherits Presentacion(lunaPark,new Date(15,12,2017),[],[]){
 	
 	override method agregarUnMusico(unMusico){
 		if(!(unMusico.habilidad() > 70)){
